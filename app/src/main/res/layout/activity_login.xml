@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg3"
-    tools:context=".MainActivity">
+    tools:context=".loginActivity">
 
     <TextView
         android:id="@+id/registerHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="@dimen/material_emphasis_high_type"
-        android:text="Food Paradise!"
+        android:text="Login"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,11 +21,11 @@
         app:layout_constraintVertical_bias="0.109" />
 
     <EditText
-        android:id="@+id/registerName"
+        android:id="@+id/loginUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Name"
+        android:hint="Username"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +36,7 @@
 
 
     <EditText
-        android:id="@+id/registerPhone"
+        android:id="@+id/loginPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -47,66 +46,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerName"
+        app:layout_constraintTop_toBottomOf="@+id/loginUsername"
         app:layout_constraintVertical_bias="0.087" />
 
-
-    <EditText
-        android:id="@+id/registerEmail"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
+        android:text="Login"
+        android:backgroundTint="#000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerPhone"
-        app:layout_constraintVertical_bias="0.087" />
-
-    <Button
-        android:id="@+id/clearBtn"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="CLEAR"
-        android:backgroundTint="#EE4B2B"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerEmail"
+        app:layout_constraintTop_toBottomOf="@+id/loginPhone"
         app:layout_constraintVertical_bias="0.153" />
-
-    <Button
-        android:id="@+id/validateBtn"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="VALIDATE"
-        android:backgroundTint="#FFC300"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clearBtn"
-        app:layout_constraintVertical_bias="0.153" />
-
-    <Button
-        android:id="@+id/registerBtn"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:backgroundTint="#00A300"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/validateBtn"
-        app:layout_constraintVertical_bias="0.223" />
-
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

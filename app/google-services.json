@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "626373173342",
+    "project_id": "labeval-84e16",
+    "storage_bucket": "labeval-84e16.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:626373173342:android:d59917b4dd870b114c14cf",
+        "android_client_info": {
+          "package_name": "com.example.billingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "626373173342-b1acjo2qt9teirl847qbbs4rg68n7783.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDUlqCiXa0AMwy2JRdQ-EGEDn55y1DZGw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "626373173342-b1acjo2qt9teirl847qbbs4rg68n7783.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

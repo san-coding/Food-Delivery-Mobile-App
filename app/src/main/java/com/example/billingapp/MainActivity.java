@@ -1,14 +1,19 @@
 package com.example.billingapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,11 +49,13 @@ public class MainActivity extends AppCompatActivity {
 
         registerName = (EditText)findViewById(R.id.registerName);
         registerPhone = (EditText)findViewById(R.id.registerPhone);
-        registerAddress = (EditText)findViewById(R.id.registerAddress);
+        registerAddress = (EditText)findViewById(R.id.registerEmail);
 
         clearBtn=(Button) findViewById(R.id.clearBtn);
         validateBtn=(Button) findViewById(R.id.validateBtn);
         registerBtn=(Button) findViewById(R.id.registerBtn);
+        DAOGrocery dao=new DAOGrocery();
+
 
         clearBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,12 +88,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(isValidated){
-                    Toast.makeText(MainActivity.this,"Registering user",Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(view.getContext(),Menu.class);
 
                     intent.putExtra(Name,userEnteredName);
                     intent.putExtra(Phone,userEnteredPhone);
                     intent.putExtra(Address,userEnteredAddress);
+
+                    Grocery emp=new Grocery(registerName.getText().toString(),registerPhone.getText().toString(),registerAddress.getText().toString());
+                    dao.add(emp).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(MainActivity.this,"Registering user",Toast.LENGTH_LONG).show();
+
+                            Log.d("Message","Record is inserted");
+
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.d("Message",e.getMessage());
+
+                        }
+                    });
+
 
 
                     startActivity(intent);
