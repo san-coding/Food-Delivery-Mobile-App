@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(isValidated){
-                    Intent intent = new Intent(view.getContext(),Menu.class);
+                    Intent intent = new Intent(view.getContext(),loginActivity.class);
 
                     intent.putExtra(Name,userEnteredName);
                     intent.putExtra(Phone,userEnteredPhone);
