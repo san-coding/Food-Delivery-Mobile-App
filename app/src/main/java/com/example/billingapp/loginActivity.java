@@ -53,7 +53,15 @@ public class loginActivity extends AppCompatActivity {
                             if(username.equals(loginUsername.getText().toString())){
                                 if(phone.equals(loginPhone.getText().toString())) {
                                     Toast.makeText(getApplicationContext(), "logged in", Toast.LENGTH_SHORT).show();
+                                  //  Intent get= getIntent();
+                                 //   String usernameIntent = get.getStringExtra("username");
+                                 //   String phoneIntent = get.getStringExtra("phone");
+
                                     Intent intent = new Intent(getApplicationContext(), Menu.class);
+                                 //   intent.putExtra("username",usernameIntent);
+                                 //   intent.putExtra("phone",phoneIntent);
+
+
                                     startActivity(intent);
                                 }
                                 else{

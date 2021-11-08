@@ -3,7 +3,9 @@ package com.example.billingapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -101,9 +103,15 @@ public class MainActivity extends AppCompatActivity {
                 if(isValidated){
                     Intent intent = new Intent(view.getContext(),loginActivity.class);
 
-                    intent.putExtra(Name,userEnteredName);
-                    intent.putExtra(Phone,userEnteredPhone);
-                    intent.putExtra(Address,userEnteredAddress);
+
+                    SharedPreferences sharedpreferences = getSharedPreferences("details", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    editor.putString("username", registerName.getText().toString());
+                    editor.putString("phone", registerPhone.getText().toString());
+
+                    editor.commit();
+
+
 
                     Grocery emp=new Grocery(registerName.getText().toString(),registerPhone.getText().toString(),registerAddress.getText().toString());
                     dao.add(emp).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -121,8 +129,6 @@ public class MainActivity extends AppCompatActivity {
 
                         }
                     });
-
-
 
                     startActivity(intent);
 

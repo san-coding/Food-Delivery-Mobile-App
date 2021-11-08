@@ -1,7 +1,9 @@
 package com.example.billingapp;
 
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -48,9 +50,7 @@ public class Summary extends AppCompatActivity {
         locateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:8667615041"));
-                startActivity(callIntent);
+          Toast.makeText(getApplicationContext(),"Order placed successfully",Toast.LENGTH_LONG).show();
 
             }
         });
@@ -86,7 +86,12 @@ public class Summary extends AppCompatActivity {
                     {
                         ListAdapter listAdapter = new ListAdapter(this,productOrders);
                         lvSummary.setAdapter(listAdapter);
-                        tvTotal.setText("Order Total: "+Total+" $"+"\nName: Sandeep\nAddress: 4d good home");
+                        SharedPreferences sharedPreferences = getSharedPreferences("details", Context.MODE_PRIVATE);
+                        String userNameSharedPref = sharedPreferences.getString("username", "Sandeep");
+                        String phoneSharedPref = sharedPreferences.getString("phone", "8667615041");
+
+                        tvTotal.setText("Order Total: "+Total+" $"+"\nName: "+userNameSharedPref+"\nPhone: "+phoneSharedPref);
+
                     }
                     else
                     {
