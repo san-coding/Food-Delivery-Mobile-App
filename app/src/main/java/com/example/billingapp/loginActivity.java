@@ -19,8 +19,7 @@ public class loginActivity extends AppCompatActivity {
     EditText loginUsername;
     EditText loginPhone;
     Button loginBtn;
-    String registeredName;
-    String dbName;
+
 
 
     @Override
@@ -57,6 +56,14 @@ public class loginActivity extends AppCompatActivity {
                                     Intent intent = new Intent(getApplicationContext(), Menu.class);
                                     startActivity(intent);
                                 }
+                                else{
+                                    Toast.makeText(getApplicationContext(), "Invalid credentials", Toast.LENGTH_SHORT).show();
+
+                                }
+
+                            }
+                            else{
+                                Toast.makeText(getApplicationContext(), "Invalid credentials", Toast.LENGTH_SHORT).show();
 
                             }
 
