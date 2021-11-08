@@ -1,9 +1,10 @@
 package com.example.billingapp;
 
 public class Grocery {
-    private String name;
-    private String number;
-    private String email;
+    public String name;
+    public String number;
+    public String email;
+    public Grocery(){}
 
     public Grocery(String name, String number, String email) {
         this.name = name;

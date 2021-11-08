@@ -83,6 +83,14 @@ public class MainActivity extends AppCompatActivity {
         validateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(),loginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
                 validate(registerName.getText().toString(),registerPhone.getText().toString(),registerAddress.getText().toString());
                 if(isValidated){
@@ -90,12 +98,6 @@ public class MainActivity extends AppCompatActivity {
                     userEnteredPhone=registerPhone.getText().toString();
                     userEnteredAddress=registerAddress.getText().toString();
                 }
-            }
-        });
-
-        registerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
                 if(isValidated){
                     Intent intent = new Intent(view.getContext(),loginActivity.class);
 
