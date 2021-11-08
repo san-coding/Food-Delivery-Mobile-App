@@ -25,9 +25,7 @@ public class Summary extends AppCompatActivity {
     TextView tvTotal;
     Double Total=0d;
     ArrayList<Product> productOrders = new ArrayList<>();
-    private Button smsBtn;
-    private Button payBtn;
-    private Button contactBtn;
+
     private Button locateBtn;
 
     @Override
@@ -37,50 +35,17 @@ public class Summary extends AppCompatActivity {
         lvSummary = findViewById(R.id.lvSummary);
         tvTotal = findViewById(R.id.tvTotal);
 
-        smsBtn=(Button)findViewById(R.id.smsBtn);
-        payBtn=(Button)findViewById(R.id.payBtn);
-        contactBtn=(Button)findViewById(R.id.contactBtn);
         locateBtn=(Button)findViewById(R.id.locateBtn);
 
         getOrderItemData();
 
-        smsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),Summary.class);
-                PendingIntent pi=PendingIntent.getActivity(getApplicationContext(), 0, intent,0);
 
-                SmsManager sms=SmsManager.getDefault();
-                sms.sendTextMessage("8667615041", null, tvTotal.getText().toString(), pi,null);
 
-            }
-        });
 
-        payBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
+
 
         locateBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Uri gmmIntentUri = Uri.parse("geo:0,0?q=");
-                        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-                        mapIntent.setPackage("com.google.android.apps.maps");
-                        startActivity(mapIntent);
-                    }
-                }, 1000);
-            }
-
-
-        });
-
-        contactBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent callIntent = new Intent(Intent.ACTION_CALL);

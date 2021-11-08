@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private Button clearBtn;
     private Button validateBtn;
     private Button registerBtn;
+    private Button viewAllBtn;
 
     private boolean isValidated=false;
     private boolean isRegistered=false;
@@ -54,8 +55,16 @@ public class MainActivity extends AppCompatActivity {
         clearBtn=(Button) findViewById(R.id.clearBtn);
         validateBtn=(Button) findViewById(R.id.validateBtn);
         registerBtn=(Button) findViewById(R.id.registerBtn);
+        viewAllBtn=(Button)findViewById(R.id.viewBtn);
         DAOGrocery dao=new DAOGrocery();
 
+        viewAllBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(),viewActivity.class);
+                startActivity(intent);
+            }
+        });
 
         clearBtn.setOnClickListener(new View.OnClickListener() {
             @Override

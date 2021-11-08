@@ -12,8 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="@dimen/material_emphasis_high_type"
-        android:text="Food Paradise!"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:text="Grocery.eval"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.50"
@@ -69,44 +70,52 @@
         android:id="@+id/clearBtn"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="CLEAR"
         android:backgroundTint="#EE4B2B"
+        android:text="CLEAR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerEmail"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintVertical_bias="0.117" />
 
     <Button
         android:id="@+id/validateBtn"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="VALIDATE"
         android:backgroundTint="#FFC300"
+        android:text="VALIDATE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clearBtn"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintVertical_bias="0.08" />
 
     <Button
         android:id="@+id/registerBtn"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Register"
         android:backgroundTint="#00A300"
+        android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/validateBtn"
-        app:layout_constraintVertical_bias="0.223" />
+        app:layout_constraintVertical_bias="0.125" />
 
-
-
-
+    <Button
+        android:id="@+id/viewBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VIEW ALL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerBtn"
+        app:layout_constraintVertical_bias="0.309" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

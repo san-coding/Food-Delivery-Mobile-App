@@ -39,49 +39,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/smsBtn"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="SMS"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.025"
-        app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTotal"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/payBtn"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="8dp"
-        android:text="Pay"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/smsBtn"
-        app:layout_constraintTop_toBottomOf="@+id/tvTotal" />
-
-    <Button
-        android:id="@+id/contactBtn"
-        android:layout_width="105dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Contact"
-        app:layout_constraintStart_toEndOf="@+id/payBtn"
-        app:layout_constraintTop_toBottomOf="@+id/tvTotal" />
-
-    <Button
         android:id="@+id/locateBtn"
-        android:layout_width="95dp"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="LOCATE"
-        app:layout_constraintStart_toEndOf="@+id/contactBtn"
+        android:text="PLACE ORDER"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTotal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
